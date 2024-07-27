@@ -1,12 +1,33 @@
 ---
 layout: page
-permalink: /teaching/
-title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+permalink: /Teaching/
+title: Teaching
+description:
 nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+---
 
-Organize your courses by years, topics, or universities, however you like!
+### **Graduate Teaching Assistant**
+
+---
+
+##### BSEN 260 Instrumentation I by Dr. Greg Bashford, **Spring 2024** 
+ * Graded students’ assignments, taught labs, and helped the professor to prepare the experimental equipment. 
+
+##### BSEN 460 Instrumentation & Controls by Dr. Yufeng Ge, **Autumn 2022** 
+ * Graded students’ assignments, taught labs, and helped the professor to prepare the experimental equipment. 
+
+---
+
+### **Undergraduate Teaching Assistant**
+
+---
+
+##### FABE 3130 Heat & Mass Transfer by Dr. Dennis R. Heldman, **Spring 2021**
+ * Graded students’ assignments and exams, answered students’ questions during the lab, and helped the professor to prepare the experimental equipment. 
+
+##### FABE 3150 System Dynamic & Electricity by Dr. Michael Jay Lichtensteiger, **Spring 2021** 
+ * Graded students’ assignments and exams, answered students’ questions during the lab, and helped the professor to prepare the experimental equipment. 
+

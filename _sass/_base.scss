@@ -185,15 +185,36 @@ ul.task-list input[type="checkbox"] {
 .profile {
   width: 100%;
 
-  .more-info {
+  .address {
     margin-bottom: 5px;
     margin-top: 5px;
     font-family: monospace;
 
     p {
       display: inline-block;
-      margin: 0;
+      margin: auto;
     }
+  }
+}
+.profile.center {
+  margin: auto;
+  justify-content: center;
+
+  .header {
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  picture {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+  }
+
+  img {
+    margin: auto;
+    max-width: 50%;
+    min-width: 300px;
   }
 }
 
@@ -238,6 +259,7 @@ ul.task-list input[type="checkbox"] {
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
   opacity: 0.95;
+  font-size: 20px;
 }
 
 .navbar .dropdown-menu {
@@ -373,7 +395,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       i::before {

@@ -5,8 +5,7 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+
       {% else %}
         {{ site.title }}
       {% endif %}
@@ -14,28 +13,72 @@ layout: default
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
-  <article>
+    <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+      {% if page.profile.align == 'center' -%}
+        <div class="profile center justify-content-center">
+          {%- if page.profile.image %}
+            {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+
+            {% if page.profile.image_circular %}
+              {%- assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' -%}
+            {% else %}
+              {%- assign profile_image_class = 'img-fluid z-depth-1 rounded' -%}
+            {% endif %}
+
+            {%
+              include figure.liquid
+              path=profile_image_path
+              class=profile_image_class
+              alt=page.profile.image
+            -%}
+          {% endif -%}
+          <!-- Text -->
+          <div class="header" style="margin-bottom: 2rem;">
+            {% if site.title == 'blank' -%}
+              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+              {{ site.last_name }}
+              {{ site.suffix }}
+            {%- else -%}
+              {{ site.title }}
+            {%- endif %}
+            {%- if page.profile.address %}
+              <div class="address" style="font-size: large;">
+                {{ page.profile.address }}
+              </div>
+            {%- endif %}
+            <!-- Social -->
+            <div class="contact-icons">
+              {% include social.liquid %}
+            </div>
+
+            <div class="contact-note">
+              {{ site.contact_note }}
+            </div>
+          </div>
+        </div>
+      {% else -%}
+        <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1
+            rounded' %}
+            {% endif %}
+            {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+            30vw, 95vw"{% endcapture %}
+            {%
+              include figure.liquid path = profile_image_path class = profile_image_class sizes = sizes alt = page.profile.image
+              cache_bust = true
+            %}
           {% endif %}
-          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
+          {% if page.profile.more_info %}
+            <div class="more-info">{{ page.profile.more_info }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
     {% endif %}
 
     <div class="clearfix">{{ content }}</div>
