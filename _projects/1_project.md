@@ -1,25 +1,16 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: Estimating Stomatal Conductance from RGB, NIR, and thermal infrared images
+description: SPIE 2023
 img: assets/img/12.jpg
 importance: 1
-category: work
+category: Projects
 related_publications: true
 ---
+### Abstract
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+As the global population continues to increase, the demand for food production rises accordingly. The water content of crops has a significant impact on their yield during the processes of photosynthesis and transpiration. Crops exchange carbon dioxide and water with the atmosphere through stomata. When crops undergo water stress, they tend to close their stomata to reduce water loss. However, this can also negatively affect the crop's photosynthetic efficiency, leading to lower yields. Stomatal conductance (SC) quantifies the rate of gas exchange between crops and the atmosphere and can inform the crop's water status. SC measurements require the use of contact-type instruments, which is time-consuming and labor-intensive. This study examined the accuracy of multiple linear regression (MLR), support vector regression (SVR), and convolutional neural network (CNN) models for SC estimation in corn and soybean using RGB, near-infrared, and thermal-infrared images from a field phenotyping platform. The results show that the CNN model outperformed other two models, with R2 value of 0.52. Furthermore, adding soil moisture as a variable to the model improved its accuracy, decreasing model RMSE from 0.147 to 0.137 mol/(m2*s). This study highlights the potential of estimating SC from remote sensing platforms to help growers obtain information about their crop water status and plan irrigation more effectively.   
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
